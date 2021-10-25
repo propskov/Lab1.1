@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.lang.System.*;
+// new
 
 public class Args {
     public static void main(String[] args) {

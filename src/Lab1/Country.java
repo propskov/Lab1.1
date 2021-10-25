@@ -104,7 +104,7 @@ public class Country {
             throw new IllegalArgumentException("Поле плотность не должно быть пустым");
         this.P = P;
     }
-
+// Git for
     @Override
     public String toString() {
         return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " " + "Население: " + N + " " + "Плотность :  " + P + " на кв.км";
