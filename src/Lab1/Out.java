@@ -10,7 +10,7 @@ import static java.lang.System.setOut;
 public class Out {
 
     public static void main(String[] args) {
-        System.out.println("1) Россия " + "2) Финляндия " + "3) Франция " + " 4) Андорра " + "5) Сингапур");
+        System.out.println("1) Россия " + "2) Финляндия " + "3) Франция " + " 4) Андорра " + "5) Сингапур" + "  6) я очень любознательный");
         System.out.println("Выберите номер страны, информацию о которой хотите узнать : ");
         Scanner in = new Scanner(System.in);
         int num = in.nextInt();
@@ -45,6 +45,13 @@ public class Out {
                 num = 5;
                 System.out.println(Andorra);
                 break;
+            case 6:
+                num = 6;
+                out.println(Russia);
+                out.println(France);
+                out.println(Finland);
+                out.println(Andorra);
+                out.println(Singapore);
 
         }
     }

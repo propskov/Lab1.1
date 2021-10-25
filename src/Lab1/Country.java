@@ -60,6 +60,8 @@ public class Country {
         this.namestol = namestol;
     }
 
+
+
     //  get/set S
     public int getS() {
         return S;
