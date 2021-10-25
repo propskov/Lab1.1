@@ -3,11 +3,10 @@ package Lab1;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
-
 import static java.lang.System.*;
-// new
-
 public class Args {
+
+
     public static void main(String[] args) {
         Country[] countries = new Country[]{
                 new Country("Russia", "Moscow", 17_100000, 146_000_000, 12_600_000),
