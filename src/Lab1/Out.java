@@ -8,7 +8,6 @@ import static java.lang.System.out;
 import static java.lang.System.setOut;
 
 public class Out {
-
     public static void main(String[] args) {
         System.out.println("1) Россия " + "2) Финляндия " + "3) Франция " + " 4) Андорра " + "5) Сингапур" + "  6) я очень любознательный");
         System.out.println("Выберите номер страны, информацию о которой хотите узнать : ");
