@@ -11,7 +11,6 @@ P - плотность населения
 package Lab1;
 
 public class Country {
-    public static int length;
     private String name, namestol;
     private int S, N, Nstol, P;
 
@@ -21,7 +20,6 @@ public class Country {
         this.S = S;
         this.N = N;
         this.Nstol = Nstol;
-        this.P = P;
         P = N / S;
     }
 
@@ -29,11 +27,6 @@ public class Country {
         this.name = name;
         this.S = S;
         this.N = N;
-        this.P = P;
-        P = N / S;
-    }
-
-    public static void printAll(Country[] countries) {
     }
 
     // get/set Name
@@ -44,9 +37,8 @@ public class Country {
 
 
     public void setName() {
-        if (name == null)
+        if (name == null && !name.equals(""))
             throw new IllegalArgumentException("Поле название страны не должно быть пустым");
-        this.name = name;
     }
 
 
@@ -56,10 +48,10 @@ public class Country {
         return namestol;
     }
 
-    public void setstol(String stol) {
-        this.namestol = namestol;
+    public void setNamestol() {
+        if (namestol == null && !namestol.equals(""))
+            throw new IllegalArgumentException("Поле столица страны не должно быть пустым");
     }
-
 
 
     //  get/set S
@@ -70,7 +62,6 @@ public class Country {
     public void setS(int S) {
         if (S <= 0)
             throw new IllegalArgumentException("Поле площадь не должно быть пустым");
-        this.S = S;
     }
 
     //  get/set N
@@ -81,7 +72,6 @@ public class Country {
     public void setN(int N) {
         if (N <= 0)
             throw new IllegalArgumentException("Поле неселение не должно быть пустым");
-        this.N = N;
     }
 
 
@@ -91,7 +81,6 @@ public class Country {
     }
 
     public void setNstol(int Nstol) {
-        this.Nstol = Nstol;
     }
 
     //  get/set P
@@ -102,13 +91,28 @@ public class Country {
     public void setP(int P) {
         if (P <= 0)
             throw new IllegalArgumentException("Поле плотность не должно быть пустым");
-        this.P = P;
     }
-// Git for
+
+    // Git for
     @Override
     public String toString() {
-        return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " " + "Население: " + N + " " + "Плотность :  " + P + " на кв.км";
+        return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " " + "Население: " + N + " " + "Плотность : " + P + " чел. на кв.км";
     }
+
+    public void print() {
+        System.out.println(name + ":  Площадь = " + S + "; Население = " + N
+                + "; Плотность населения = " + P + " чел");
+        if (namestol != null)
+            System.out.println("Столица - " + namestol
+                    + " с населением - " + Nstol);
+        System.out.println();
+    }
+
+    public static void printAll(Country[] countries) {
+        for (Country c : countries)
+            c.print();
+    }
+
 }
 
 

@@ -17,14 +17,14 @@ public class Out {
         Country Russia = new Country("Russia", "Moscow", 17_100000, 146_000_000, 12_600_000);
         Country Finland = new Country("Finland", "Helsinki", 338_000, 5_500_000, 655_000);
         Country France = new Country("France", "Paris", 643_800, 67_800_000, 2_100_000);
-        Country Singapore = new Country("Singapore", 725, 570000);
+        Country Singapore = new Country("Singapore", 725, 5700000);
         Country Andorra = new Country("Andorra", "Andorra La Vella", 467_000, 85_400, 22_600);
 
 
         switch (num) {
             case 1:
                 num = 1;
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i <7; i++) {
                 }
                 System.out.println(Russia);
                 break;
