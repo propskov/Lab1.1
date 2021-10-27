@@ -39,9 +39,10 @@ public class Country {
 
 
     public void setName(String name) {
-        if (name == null && !name.equals(""))
+        if (name != null && !name.equals(""))
+            this.name = name;
+        else
             throw new IllegalArgumentException("Поле название страны не должно быть пустым");
-        this.name = name;
     }
 
 
@@ -52,9 +53,10 @@ public class Country {
     }
 
     public void setNamestol(String namestol) {
-        if (namestol == null && !namestol.equals(""))
+        if (namestol != null && !namestol.equals(""))
+            this.namestol = namestol;
+         else
             throw new IllegalArgumentException("Поле столица страны не должно быть пустым");
-        this.namestol = namestol;
     }
 
 
@@ -107,10 +109,10 @@ public class Country {
     @Override
     public String toString() {
         P = N / (S);
-        if(namestol !=null)
-        return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " кв.км"+ " " + "Население: " + N + " чел."+ " " + "Плотность : " + P + " чел.на кв.км";
-        else if(namestol==null)
-            return  "Название страны: " + name + " "  + "Площадь: " + S + " кв.км"+ " " + "Население: " + N + " чел." ;
+        if (namestol != null)
+            return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " кв.км" + " " + "Население: " + N + " чел." + " " + "Плотность : " + P + " чел.на кв.км";
+        else if (namestol == null)
+            return "Название страны: " + name + " " + "Площадь: " + S + " кв.км" + " " + "Население: " + N + " чел.";
         return null;
     }
 
