@@ -11,30 +11,23 @@ P - плотность населения
 package Lab1;
 
 public class Country {
-    public static int length;
     private String name, namestol;
-    private int S, N, Nstol, P;
-
-    public Country(String name, String namestol, int S, int N, int Nstol) {
-        this.name = name;
-        this.namestol = namestol;
-        this.S = S;
-        this.N = N;
-        this.Nstol = Nstol;
-        this.P = P;
-        P = N / S;
-    }
+    private int S, N, Nstol;
+    private float P;
 
     public Country(String name, int S, int N) {
-        this.name = name;
-        this.S = S;
-        this.N = N;
-        this.P = P;
-        P = N / S;
+        setName(name);
+        setS(S);
+        setN(N);
     }
 
-    public static void printAll(Country[] countries) {
+    public Country(String name, String namestol, int S, int N, int Nstol) {
+        this(name,S,N);
+        setNamestol(namestol);
+        setNstol(Nstol);
     }
+
+
 
     // get/set Name
 
@@ -43,10 +36,11 @@ public class Country {
     }
 
 
-    public void setName() {
-        if (name == null)
+    public void setName(String name) {
+        if (name != null && !name.equals(""))
+            this.name = name;
+        else
             throw new IllegalArgumentException("Поле название страны не должно быть пустым");
-        this.name = name;
     }
 
 
@@ -56,10 +50,12 @@ public class Country {
         return namestol;
     }
 
-    public void setstol(String stol) {
-        this.namestol = namestol;
+    public void setNamestol(String namestol) {
+        if (namestol != null && !namestol.equals(""))
+            this.namestol = namestol;
+         else
+            throw new IllegalArgumentException("Поле столица страны не должно быть пустым");
     }
-
 
 
     //  get/set S
@@ -91,24 +87,48 @@ public class Country {
     }
 
     public void setNstol(int Nstol) {
+        if (Nstol <= 0)
+            throw new IllegalArgumentException("Поле население столицы не должно быть пустым");
         this.Nstol = Nstol;
     }
 
     //  get/set P
-    public int getP() {
+    public float getP() {
         return P;
     }
 
-    public void setP(int P) {
+    public void setP(float P) {
         if (P <= 0)
             throw new IllegalArgumentException("Поле плотность не должно быть пустым");
         this.P = P;
     }
-// Git for
+
+    // Git for
     @Override
     public String toString() {
-        return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " " + "Население: " + N + " " + "Плотность :  " + P + " на кв.км";
+        P = N / (S);
+        if (namestol != null)
+            return "Название страны: " + name + " " + "Столица: " + namestol + " " + "Площадь: " + S + " кв.км" + " " + "Население: " + N + " чел." + " " + "Плотность : " + P + " чел.на кв.км";
+        else if (namestol == null)
+            return "Название страны: " + name + " " + "Площадь: " + S + " кв.км" + " " + "Население: " + N + " чел.";
+        return null;
     }
+
+    public void print() {
+        P = N / (S);
+        System.out.println(name + ":  Площадь = " + S + "; Население = " + N
+                + "; Плотность населения = " + P + " чел");
+        if (namestol != null)
+            System.out.println("Столица - " + namestol
+                    + " с населением - " + Nstol);
+        System.out.println();
+    }
+
+    public static void printAll(Country[] countries) {
+        for (Country c : countries)
+            c.print();
+    }
+
 }
 
 
