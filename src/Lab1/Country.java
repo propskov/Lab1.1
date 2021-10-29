@@ -15,20 +15,18 @@ public class Country {
     private int S, N, Nstol;
     private float P;
 
-
-    public Country(String name, String namestol, int S, int N, int Nstol) {
+    public Country(String name, int S, int N) {
         setName(name);
-        setNamestol(namestol);
         setS(S);
         setN(N);
+    }
+
+    public Country(String name, String namestol, int S, int N, int Nstol) {
+        this(name,S,N);
+        setNamestol(namestol);
         setNstol(Nstol);
     }
 
-    public Country(String name, int S, int N) {
-        this.name = name;
-        this.S = S;
-        this.N = N;
-    }
 
 
     // get/set Name
