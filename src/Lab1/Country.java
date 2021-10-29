@@ -20,7 +20,7 @@ public class Country {
         setS(S);
         setN(N);
     }
-
+//для git
     public Country(String name, String namestol, int S, int N, int Nstol) {
         this(name,S,N);
         setNamestol(namestol);
